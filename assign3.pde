@@ -207,6 +207,7 @@ void draw() {
 				gameState = GAME_RUN;
 				mousePressed = false;
 				// Remember to initialize the game here!
+        movement=STOP;
         playerHealth=2;
         groundhogX=grid*4; groundhogY=grid;
         soiloffset=0;
@@ -233,7 +234,7 @@ void draw() {
 
 void keyPressed(){
 	// Add your moving input code here
-    if(groundhogX%grid==0 && groundhogY%grid==0){
+    if(movement==STOP){
     switch(keyCode){
     case DOWN:
     if(groundhogY+grid<height){movement=DOWNWARD;}
